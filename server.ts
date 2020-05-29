@@ -1,18 +1,14 @@
-import { Application, Router } from 'https://deno.land/x/oak/mod.ts'
+import { Application } from 'https://deno.land/x/oak/mod.ts'
 
-const APP_PORT = 4000
+import { APP_HOST, APP_PORT } from './config.ts'
+
+import router from './router.ts'
 
 const app = new Application()
-
-const router = new Router()
 
 app.use(router.routes())
 app.use(router.allowedMethods())
 
-router.get('/api/v1/books', ({ response } : { response : any }) => {
-    response.body = 'Hello from Books API'
-})
-
 console.log(`SERVER running on PORT ${APP_PORT}`)
 
-await app.listen({ port: APP_PORT })
+await app.listen(`${APP_HOST}:${APP_PORT}`)
