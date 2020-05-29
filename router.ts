@@ -7,6 +7,8 @@ import Controllers from './controllers/_index.ts'
 const router = new Router()
 
 // Routes Registration
-Controllers.register(router, BASE_API_ENDPOINT)
+await Controllers.register(router, BASE_API_ENDPOINT)
+
+console.log(router)
 
 export default router

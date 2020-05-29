@@ -6,9 +6,7 @@ const getAll = ({ response } : { response : any }) => {
 
 
 export default {
-    v1: {
-        GET: {
-            'books': getAll
-        }
+    get: {
+        'books': getAll
     }
 }

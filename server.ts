@@ -9,6 +9,6 @@ const app = new Application()
 app.use(router.routes())
 app.use(router.allowedMethods())
 
-console.log(`SERVER running on PORT ${APP_PORT}`)
+console.log(`SERVER running on ${APP_HOST}:${APP_PORT} at ${Date.now().toLocaleString()}`)
 
 await app.listen(`${APP_HOST}:${APP_PORT}`)
